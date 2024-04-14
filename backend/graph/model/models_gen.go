@@ -14,13 +14,13 @@ type Query struct {
 }
 
 type Todo struct {
-	ID   string `json:"id"`
-	Text string `json:"text"`
-	Done bool   `json:"done"`
-	User *User  `json:"user"`
+	ID   string `json:"id" gorm:"primary_key"`
+	Text string `json:"text" gorm:"not null"`
+	Done bool   `json:"done" gorm:"default false" `
+	User *User  `json:"user" gorm:"foreignkey:ID;constraint:OnDelete:CASCADE;"`
 }
 
 type User struct {
-	ID   string `json:"id"`
+	ID   string `json:"id" gorm:"primary_key"`
 	Name string `json:"name"`
 }
