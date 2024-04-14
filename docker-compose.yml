@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  go-graphql:
+    container_name: go-graphql
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/go/backend
+    tty: true
