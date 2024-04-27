@@ -27,7 +27,7 @@ services:
       POSTGRES_DB: postgres
     restart: always
     ports:
-      - "5432:5432"
+      - "5430:5430"
     volumes:
       - ./db:/var/lib/postgresql/data
     networks:
